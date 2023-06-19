@@ -1,18 +1,24 @@
 import requests
-
-y = 0
-u = str(input('Enter Your URL:- '))
-r = requests.post(u)
-file = open('vws.txt', "w+")
-r.text
-file.write(r.text)
-file.close()
-print('Open to File Enter = 1')
-y = int(input('Enter Your Number:- '))
-if y==1:
+y = 1
+while y == 1:
+    u = str(input('Enter Your URL:- '))
+    d = str(input('Enter Your File Name:- '))
+    t = '.txt'
+    a = d+t
+    r = requests.post(u)
+    file = open(a, "w+")
+    r.text
+    file.write(r.text)
+    file.close()
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+    print('''
+Enter to New URL    = 1
+Open to File Enter  = 2
+''')
+    y = int(input('Enter Your Number:- '))
+    print('$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$')
+if y == 2:
     print(r.text)
-
-
 
 
 
